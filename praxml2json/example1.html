@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example for praxml2json</title>
+    <style>
+        pre {
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+<div style="visibility: hidden;" id="example2">
+
+    <employes2>
+        <employee>
+            <id>1</id>
+            <firstName>Tom</firstName>
+            <lastName>Cruise</lastName>
+            <photo>https://jsonformatter.org/img/tom-cruise.jpg</photo>
+        </employee>
+        <employee>
+            <id>2</id>
+            <firstName>Maria</firstName>
+            <lastName>Sharapova</lastName>
+            <photo>https://jsonformatter.org/img/Maria-Sharapova.jpg</photo>
+        </employee>
+        <employee>
+            <id>3</id>
+            <firstName>Robert</firstName>
+            <lastName>Downey Jr.</lastName>
+            <photo>https://jsonformatter.org/img/Robert-Downey-Jr.jpg</photo>
+        </employee>
+    </employes2>
+
+</div>
+
+
+<div id="res1"></div>
+<div id="res2"></div>
+
+
+
+</body>
+
+<!-- Including the function (or you can copy&past in script -->
+<script src="praxml2json.js"></script>
+
+<script>
+    /* Example with string */
+    const xmlSample = `
+<employees>
+	<employee>
+		<id>1</id>
+		<firstName>Tom</firstName>
+		<lastName>Cruise</lastName>
+		<photo>https://jsonformatter.org/img/tom-cruise.jpg</photo>
+	</employee>
+	<employee>
+		<id>2</id>
+		<firstName>Maria</firstName>
+		<lastName>Sharapova</lastName>
+		<photo>https://jsonformatter.org/img/Maria-Sharapova.jpg</photo>
+	</employee>
+	<employee>
+		<id>3</id>
+		<firstName>Robert</firstName>
+		<lastName>Downey Jr.</lastName>
+		<photo>https://jsonformatter.org/img/Robert-Downey-Jr.jpg</photo>
+	</employee>
+</employees>
+`;
+</script>
+
+<script>
+    let resExample1 = praxml2json(xmlSample);
+    const xmlSample2 = document.getElementById("example2").innerHTML;
+    let resExample2 = praxml2json(xmlSample2);
+    console.log(resExample2);
+    document.getElementById("res1").innerText = "Example1: " + resExample1.employees[1].firstName;
+    /* Look.. when i get xml from html object, all tags are smallcaps */
+    document.getElementById("res2").innerText = "Example2: " + resExample2.employes2[1].firstname;
+</script>
+</html>
+
