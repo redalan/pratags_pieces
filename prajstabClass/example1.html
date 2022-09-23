@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example 1 of PraJsTab</title>
+    <script src="prajstab.js"></script>
+</head>
+<body>
+
+<div id="idTab1"></div>
+</body>
+
+<script>
+    var objExample1;
+    var test;
+
+    test =
+    {
+
+    "pagination": {
+             "regByPag": 0,
+             "class": "",
+             "position" : "both"
+    },
+
+    "class":"",
+    "totalPosition": "both",
+    "countRows" : true,
+    "head":
+        {
+            "filterStyle": "line",
+            "filterClass": "",
+            "columns": [
+                {
+                    "field": "c1",
+                    "text": "First Text",
+                    "hover": "",
+                    "style": "",
+                    "filter": "text"
+                },
+                {
+                    "field": "c2",
+                    "text": "Second Text",
+                    "hover": "",
+                    "style": "",
+                    "filter": "text"
+                },
+                {
+                    "field": "c3",
+                    "text": "Other",
+                    "hover": "",
+                    "style": "",
+                    "filter": "select"
+                }
+            ]
+        },
+
+    "body" : [
+        {
+            "c1":"Reg 1 C1",
+            "c2":"Reg 1 C2",
+            "c3":"Reg X C3"
+        },
+        {
+            "c1":"Reg 2 C1",
+            "c2":"Reg 2 C2",
+            "c3":"Reg X C3"
+        },
+        {
+            "c1":"Reg 3 C1",
+            "c2":"Reg 3 C2",
+            "c3":"Reg 3 C3"
+        }
+    ]
+
+
+    }
+    ;
+
+    window.onload = () => {
+        objExample1 = new prajsTable("idTab1","objExample1");
+        objExample1.setData(test);
+        objExample1.show();
+    }
+</script>
+</html>
