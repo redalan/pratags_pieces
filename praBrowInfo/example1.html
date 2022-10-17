@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example using PraBrowInfo Function</title>
+    <script src="prabrowinfo.js"></script>
+</head>
+<body>
+
+<div id="info">
+
+</div>
+</body>
+<script>
+    var temp = JSON.stringify(praBrowInfo(),null,2);
+    document.getElementById("info").innerHTML = `<pre>${temp}</pre>`;
+</script>
+</html>
