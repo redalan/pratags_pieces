@@ -6,12 +6,15 @@
 /*
 Use:
 
-HTML
+# HTML
 ----------------------------------------
  Html Option 1:
+ ...
  <div id="yourIdObject"></div>
+ ...
 
  Html Option 2:
+ ...
  <div id="yourIdObject">
     <template>
         <tr>
@@ -19,23 +22,26 @@ HTML
         </tr>
     </template>
  </div>
-
+ ...
 :::::::::::::::::::::::::::::::::::::::::
 
- Javascript:
+#Javascript:
 ----------------------------------------
+...
 var objTest;
 window.onload = () => {
     objTest = new prajsTable("yourIdObject","objTest");
     objTest.setData(test);
     objTest.show();
 }
+...
 :::::::::::::::::::::::::::::::::::::::::
 
 
 
-Data Format Json:
+## Data Format Json:
 ----------------------------------------
+...
 {
     "pagination": {
              "regByPag": 100,   // 0 for no pagination
@@ -73,10 +79,17 @@ Data Format Json:
         }
     ]
 }
-
+...
 :::::::::::::::::::::::::::::::::::::::::
  */
 
+/**
+ * @class prajsTable
+ * @classdesc Automate tables to get sorting and filtering by column. You can do this with html tables already created or with a json that defines them.
+ * @constructor
+ * @param containerId {string} - HTML id container of table or to make table
+ * @param pParentNameString {string} - Name of object which new prajsTable is assigned.
+ */
 
 class prajsTable {
     #vagData;
@@ -132,6 +145,12 @@ class prajsTable {
 
     }
 
+    /**
+     * Set data content for table
+     * @param dataJSON {object} - json data for table
+     * @param externalDataBodyOptional {object} - html id with data
+     * @returns {boolean} - False if any error occurred.
+     */
     setData(dataJSON=null,externalDataBodyOptional=null) {
         let res = false;
         let data = dataJSON;
@@ -191,6 +210,10 @@ class prajsTable {
 
     }
 
+    /**
+     * Show Table
+     * @returns {boolean} - False if any error occurred.
+     */
     show() {
         const cThis=this;
         let vTableClass;
@@ -581,6 +604,14 @@ class prajsTable {
         return res;
     }
 
+    /**
+     * Set filter of data
+     * @param pPtFieldData {string} - Field (json) to filter
+     * @param pValue {string} - Value of field. If numeric, +N or -N is allowed. With string, look for it inside value.
+     * @param pNotFilterYet {boolean} - Not show result of filter yet
+     * @returns {boolean} - False if errors occurred
+     */
+
     setFilter(pPtFieldData,pValue=null,pNotFilterYet=false) {
         let pFilterObject = null;
         let oFilter;
@@ -625,7 +656,10 @@ class prajsTable {
 
     }
 
-
+    /**
+     * Show filter in head
+     * @param pFilterObject {object} - Table object
+     */
     showFilter(pFilterObject) {
         const fField = pFilterObject.getElementsByTagName("div")[0];
         fField.dataset["ptfloat"] = "on";
@@ -636,6 +670,10 @@ class prajsTable {
 
     }
 
+    /**
+     * Hide filter in head
+     * @param pFilterObject {object} - Table object
+     */
     hideFilter(pFilterObject) {
         const oField = (pFilterObject.parentNode.tagName == "DIV") ? pFilterObject.parentNode.parentNode : pFilterObject.parentNode;
         if (this.#vagData.head.filterStyle == 'float') {
@@ -644,6 +682,9 @@ class prajsTable {
 
     }
 
+    /**
+     * Clear content of filters in head
+     */
     cleanFilters() {
         for (let ii in this.#vagData.head.columns) {
             this.#vagData.head.columns[ii].filterData = "";
@@ -652,6 +693,9 @@ class prajsTable {
         this.#filter();
     }
 
+    /**
+     * Save filters content in sessionStorage
+     */
     saveFilters() {
         let mFilters = [];
         let sFilters = document.location.pathname + this.#parentObj;
@@ -665,6 +709,9 @@ class prajsTable {
         }
     }
 
+    /**
+     * Get filters content from sessionStorage
+     */
     getSaveFilters() {
         let sFilters = document.location.pathname + this.#parentObj;
         sFilters = sFilters.replace(/\//g,"");
@@ -681,6 +728,10 @@ class prajsTable {
 
     }
 
+    /**
+     * Pagination zone
+     * @param pObject {object} - Table object
+     */
     pagination(pObject) {
         this.#vagPag = pObject.innerHTML;
         this.#filter();
@@ -804,6 +855,10 @@ class prajsTable {
         this.#showBody(tempData);
     }
 
+    /**
+     * Get json data of table
+     * @returns {object} - Json
+     */
     getData() {
         return this.#vagData.body;
     }
@@ -828,6 +883,10 @@ class prajsTable {
         }
     }
 
+    /**
+     * Set debug on/off
+     * @param trueOrFalse {boolean} - Set debug True (on) or False (off, default)
+     */
     setDebug(trueOrFalse=false) {
         this.#bDebug = trueOrFalse;
     }
