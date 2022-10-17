@@ -13,6 +13,14 @@ This function will be part of the future PRATAGS alpha release. A RedAlan projec
         maxDeep Int (optional) with max iteractions. This number is for security proposal.
 * */
 
+
+/**
+ * Function to convert xml data to json object
+ * @param xml {string} - String with xml data format
+ * @param maxDeep {int} #5000 - Optional deep levels to convert. Default 5k
+ * @return {object} - Return json object with data founded
+ */
+
 function praxml2json(xml="",maxDeep=5000) {
     var objXML;
     var parser;
