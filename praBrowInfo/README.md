@@ -38,10 +38,12 @@ If in "info" you specify "all", then it will look at all the capabilities includ
 
 ## Examples
 
-`
-praBrowInfo();
-`
+ ~~~
+ praBrowInfo();
+~~~
+
 Return:
+
 {
   "jsVersion": 1.5,
   "arrowFunction": true,
@@ -53,24 +55,24 @@ Return:
   "indexedDB": true
 }
 
-`
-praBrowInfo('cookies');
-`
+ ~~~
+ praBrowInfo('cookies');
+~~~
 
 Return:
 True
 
-`
-praBrowInfo('all');
-`
+ ~~~
+ praBrowInfo('all');
+~~~
 
 Return:
 True // if arrowFunction,querySelector,cookies is supported
 
 
-`
-praBrowInfo('all','jquery,querySelector');
-`
+ ~~~
+ praBrowInfo('all','jquery,querySelector');
+~~~
 
 Return:
 True // if jQuery and querySelector is supported
