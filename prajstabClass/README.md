@@ -6,7 +6,7 @@ Javascript class to give functionality to your tables with filters and paginatio
 ## Use
 
 ### HTML
--
+
  Html Option 1:
  ~~~
  <div id="yourIdObject"></div>
@@ -26,12 +26,12 @@ Javascript class to give functionality to your tables with filters and paginatio
     </template>
  </div>
 ~~~
----
+
 
 
 
 ### Javascript
--
+
  ~~~
 var objTest;
 window.onload = () => {
