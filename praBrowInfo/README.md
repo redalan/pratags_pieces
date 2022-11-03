@@ -1,4 +1,4 @@
-#praBrowInfo
+# praBrowInfo
 (cc)(p) Redalan Net 2022
 vers. 0.22101701 alfa
 
