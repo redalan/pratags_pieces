@@ -23,8 +23,10 @@ Las capacidades que puedas testear en esta versión son:
 Para usar esta función, puedes descargar el js o añadirlo a tu js o zona script de tu html. También lo puedes usar en un webview de android o iOS para ver el soporte de ese webview en ese teléfono (que es dónde más te puede servir pues muchos webview no soportan muchas funciones de los navegadores de escritorio).
 
 Para llamar a la función usarás:
-`praBrowInfo([string info], [string allRequired=arrowFunction,querySelector,cookies])
-Return variant`
+ ~~~
+ praBrowInfo([string info], [string allRequired=arrowFunction,querySelector,cookies])
+ Return variant
+~~~
 
 praBroInfo devuelve bool o un objeto json según la “info” dada.
 
@@ -36,9 +38,10 @@ Si en “info” especificas “all”, entonces mirará todas las capacidades i
 
 ## Ejemplos
 
-`
-praBrowInfo();
-`
+ ~~~
+ praBrowInfo();
+~~~
+
 Devuelve:
 {
   "jsVersion": 1.5,
@@ -51,24 +54,24 @@ Devuelve:
   "indexedDB": true
 }
 
-`
-praBrowInfo('cookies');
-`
+ ~~~
+ praBrowInfo('cookies');
+~~~
 
 Devuelve:
 True
 
-`
-praBrowInfo('all');
-`
+ ~~~
+ praBrowInfo('all');
+~~~
 
 Devuelve:
 True // Si arrowFunction,querySelector,cookies son soportados
 
 
-`
-praBrowInfo('all','jquery,querySelector');
-`
+ ~~~
+ praBrowInfo('all','jquery,querySelector');
+~~~
 
 Devuelve:
 True // Si jQuery and querySelector son soportados
