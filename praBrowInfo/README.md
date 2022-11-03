@@ -24,8 +24,8 @@ To use this function, you can either download the js or add it to your js or scr
 
 To call the function you will use:
  ~~~
-`praBrowInfo([string info], [string allRequired=arrowFunction,querySelector,cookies])
-Return variant`
+ praBrowInfo([string info], [string allRequired=arrowFunction,querySelector,cookies])
+ Return variant
 ~~~
 
 praBroInfo returns bool or a json object depending on the given "info".
