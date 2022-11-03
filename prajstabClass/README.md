@@ -1,22 +1,23 @@
-PRAJS TABLE vers 0.21120701.Alfa
+# PRAJS TABLE vers 0.21120701.Alfa
 (cc) Redalan Net 2021
 
 Javascript class to give functionality to your tables with filters and pagination from a Json (Alpha version).
 
-Use:
+## Use
 
-HTML
-----------------------------------------
+### HTML
+-
  Html Option 1:
-
+ ~~~
  <div id="yourIdObject"></div>
-
+~~~
 
 
 
 
  Html Option 2:
 
+ ~~~
  <div id="yourIdObject">
     <template>
         <tr>
@@ -24,25 +25,27 @@ HTML
         </tr>
     </template>
  </div>
+~~~
+---
 
-:::::::::::::::::::::::::::::::::::::::::
 
 
-
- Javascript:
-----------------------------------------
+### Javascript
+-
+ ~~~
 var objTest;
 window.onload = () => {
     objTest = new prajsTable("yourIdObject","objTest");
     objTest.setData(test);
     objTest.show();
 }
-:::::::::::::::::::::::::::::::::::::::::
+~~~
 
 
 
-Data Format Json:
-----------------------------------------
+### Data Format Json
+
+ ~~~
 {
     "pagination": {
              "regByPag": 100,   // 0 for no pagination
@@ -89,5 +92,5 @@ Data Format Json:
     ]
 }
 
-:::::::::::::::::::::::::::::::::::::::::
- */
+~~~
+
