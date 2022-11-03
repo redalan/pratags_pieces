@@ -7,7 +7,7 @@ vers. 0.22101701 alfa
 
 Small independent function that will be part of the PRATAGS class, which you can use now.
 
-This function gives you information about the browser's capabilities in some essential aspects, such as whether it supports Array Functions, session and localStorage, or has the ability to use indexDB. 
+This function gives you information about the browser's capabilities in some essential aspects, such as whether it supports Array Functions, session and localStorage, or has the ability to use indexDB.
 
 The capabilities it currently tests are:
 - sessionStorage
@@ -23,8 +23,10 @@ The capabilities it currently tests are:
 To use this function, you can either download the js or add it to your js or script area of your html. You can also use it in an android or iOS webview to see the support of that webview on that phone (which is where it can be most useful as many webviews don't support many desktop browser features).
 
 To call the function you will use:
+~~~
 `praBrowInfo([string info], [string allRequired=arrowFunction,querySelector,cookies])
 Return variant`
+~~~
 
 praBroInfo returns bool or a json object depending on the given "info".
 
