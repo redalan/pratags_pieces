@@ -13,7 +13,7 @@ The capabilities it currently tests are:
 - sessionStorage
 - localStorage
 - cookies
-- Array Functions
+- Arrow Functions
 - indexDB
 - querySelector
 - jQuery
