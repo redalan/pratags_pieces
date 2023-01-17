@@ -11,9 +11,9 @@ Versión alfa.
 ### HTML
 
  Html Opción 1:
- ~~~
+ ~~~html
 
- <div id="yourIdObject"></div>
+ <div id="id de tu objeto"></div>
 
  ~~~
 
@@ -39,7 +39,7 @@ Versión alfa.
 
 ### Javascript
 
- ~~~
+~~~javascript 
 
  var objTest;
  window.onload = () => {
@@ -48,79 +48,94 @@ Versión alfa.
     objTest.show();
  }
 
- ~~~
+~~~
 
 
 
 ### Conjunto de datos JSON
 
- ~~~
+ ~~~json
 
 {
     "pagination": {
-             "regByPag": 100,   _0 para no paginar_
+             "regByPag": 100,
+                /* 0 para no paginar */
              "class": "",
              "position" : "both"
-                          _[both | top | bottom]_
-                          _Posición de la paginación._
+                /*  [both | top | bottom]
+                    Posición de la paginación.
+                */
     },
     "class":"",
     "totalPosition": "both"
-                    _[top | both | bottom | none]_
-                    _Posición fila TOTAL (columnas numéricas)_
+                /* [top | both | bottom | none] 
+                    Posición fila TOTAL (columnas numéricas)
+                */
 
     "countRows" : true
-                   _[true | false]_
-                   _Recuento de filas (poner o no)_
+                /* [true | false] 
+                   Recuento de filas (poner o no)
+                */
     "head":
         {
             "filterStyle": "float",
-                            _[float | line]_
-                            _(flotante o incrustado)_
+                /*  [float | line]
+                    (flotante o incrustado)
+                */
 
             "filterClass": "",
-                            _ Clase CSS para añadir al filtro _
+                /* Clase CSS para añadir al filtro
+                */
             "columns": [
                 {
-                    "field": "c1",  _Campo de la columna JSON_
-                    "text": "Column 1",  _Título de la columna_
+                    "field": "c1", 
+                    /* Campo de la columna JSON 
+                    */
+                    "text": "Column 1", 
+                    /* Título de la columna
+                    */
                     "hover": "",
                     "style": "",
                     "filter": "text"
-                              _[text | select | number | custom | year | yearmonth]_
-                              - text = Texto (filtro de cadena)
-                              - select = Desplegable con los diferentes valores no repetidos
-                              - number = Campo numérico. Se puede usar = + o - para especificar igual, más o menos de un valor dado.
-                              - custom = nombre de una función de filtro (ver customFieldFunction)
-                              - year = en una columna fecha, desplegable con los años no repetidos
-                              - yearmonth = en una columna fecha, desplegable con año y mes no repetidos
+                    /* [text | select | number | custom | year | yearmonth]
 
-                    _Campos opcionales si el filtro es "custom"_
+                    - text = Texto (filtro de cadena)
+                    - select = Desplegable con los diferentes valores no repetidos
+                    - number = Campo numérico. Se puede usar = + o - para especificar igual, más o menos de un valor dado.
+                    - custom = nombre de una función de filtro (ver customFieldFunction)
+                    - year = en una columna fecha, desplegable con los años no repetidos
+                    - yearmonth = en una columna fecha, desplegable con año y mes no repetidos
+                    
+                    Campos opcionales si el filtro es "custom" 
+                    */
 
                     "customFieldFunction": "nombre de tu función",
-                        _Debe devolver el objeto html con el filtro que se usará y debe contener la cadena "{events}" para que el sistema añada los eventos html de cambio (onchange) y el estilo flotante en su caso._
+                    /* Debe devolver el objeto html con el filtro que se usará y debe contener la cadena "{events}" para que el sistema añada los eventos html de cambio (onchange) y el estilo flotante en su caso.
+                    */
 
 
                     "customFilterFunction": "función de filtro",
-                    _Recibe 2 parámetros:_
+                    /* Recibe 2 parámetros:
                         Valor: Valor de la celda
                         Filtro: Valor seleccionado o dado en el filtro
 
                         Debe devolver: true (incluido en filtro) o false (no incluido)
+                    */
 
 
 
 
                     "customFilterFunctionRow": "función de filtro",
-                    _Recibe 2 parámetros:_
+                    /* Recibe 2 parámetros: 
                         Objeto Fila: objeto html ROW de la fila de la tabla
                         Filtro: Valor seleccionado o dado en el filtro
 
                      Debe devolver: true o false
-
+                    */
 
                     "filterData" : "valor de filtro al inicio"
-                     _Si se especifica, valor de inicio de este filtro_
+                    /* Si se especifica, valor de inicio de este filtro
+                    */
                 }
             ]
         },
