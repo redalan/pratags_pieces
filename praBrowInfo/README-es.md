@@ -10,11 +10,11 @@ Pequeña función independiente que formará parte de la clase PRATAGS, pero que
 
 Esta función te da información sobre las capacidades que tiene el navegador del usuario en algunos  aspectos que necesitas en tu proyecto, como por ejemplo si soporta las Array Function, las funciones de almacenamiento local y session, cookies, el uso de indexDB etc.
 
-Las capacidades que puedas testear en esta versión son:
+Las capacidades que puedes testear en esta versión son:
 - sessionStorage
 - localStorage
 - cookies
-- Array Functions ()=>
+- Arrow Functions ()=>
 - indexDB
 - querySelector
 - jQuery
@@ -23,7 +23,7 @@ Las capacidades que puedas testear en esta versión son:
 
 Para usar esta función, puedes descargar el js o añadirlo a tu js o zona script de tu html. También lo puedes usar en un webview de android o iOS para ver el soporte de ese webview en ese teléfono (que es dónde más te puede servir pues muchos webview no soportan muchas funciones de los navegadores de escritorio).
 
-Para llamar a la función usarás:
+Para llamar a la función usa:
  ~~~
  praBrowInfo([string info], [string allRequired=arrowFunction,querySelector,cookies])
  Return variant
