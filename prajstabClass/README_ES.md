@@ -22,7 +22,7 @@ Versión alfa.
 
  Html Opción 2:
 
- ~~~
+ ~~~html
 
  <div id="yourIdObject">
     <template>
@@ -59,83 +59,29 @@ Versión alfa.
 {
     "pagination": {
              "regByPag": 100,
-                /* 0 para no paginar */
              "class": "",
              "position" : "both"
-                /*  [both | top | bottom]
-                    Posición de la paginación.
-                */
     },
     "class":"",
-    "totalPosition": "both"
-                /* [top | both | bottom | none] 
-                    Posición fila TOTAL (columnas numéricas)
-                */
-
-    "countRows" : true
-                /* [true | false] 
-                   Recuento de filas (poner o no)
-                */
+    "totalPosition": "both",
+    "countRows" : true,
+                
     "head":
         {
             "filterStyle": "float",
-                /*  [float | line]
-                    (flotante o incrustado)
-                */
-
             "filterClass": "",
-                /* Clase CSS para añadir al filtro
-                */
             "columns": [
                 {
                     "field": "c1", 
-                    /* Campo de la columna JSON 
-                    */
-                    "text": "Column 1", 
-                    /* Título de la columna
-                    */
+                    "text": "Column 1",
                     "hover": "",
                     "style": "",
-                    "filter": "text"
-                    /* [text | select | number | custom | year | yearmonth]
-
-                    - text = Texto (filtro de cadena)
-                    - select = Desplegable con los diferentes valores no repetidos
-                    - number = Campo numérico. Se puede usar = + o - para especificar igual, más o menos de un valor dado.
-                    - custom = nombre de una función de filtro (ver customFieldFunction)
-                    - year = en una columna fecha, desplegable con los años no repetidos
-                    - yearmonth = en una columna fecha, desplegable con año y mes no repetidos
-                    
-                    Campos opcionales si el filtro es "custom" 
-                    */
+                    "filter": "text",
 
                     "customFieldFunction": "nombre de tu función",
-                    /* Debe devolver el objeto html con el filtro que se usará y debe contener la cadena "{events}" para que el sistema añada los eventos html de cambio (onchange) y el estilo flotante en su caso.
-                    */
-
-
                     "customFilterFunction": "función de filtro",
-                    /* Recibe 2 parámetros:
-                        Valor: Valor de la celda
-                        Filtro: Valor seleccionado o dado en el filtro
-
-                        Debe devolver: true (incluido en filtro) o false (no incluido)
-                    */
-
-
-
-
                     "customFilterFunctionRow": "función de filtro",
-                    /* Recibe 2 parámetros: 
-                        Objeto Fila: objeto html ROW de la fila de la tabla
-                        Filtro: Valor seleccionado o dado en el filtro
-
-                     Debe devolver: true o false
-                    */
-
                     "filterData" : "valor de filtro al inicio"
-                    /* Si se especifica, valor de inicio de este filtro
-                    */
                 }
             ]
         },
@@ -151,3 +97,52 @@ Versión alfa.
 
 ~~~
 
+> Ayuda Conjunto de Datos
+> - **pagination**
+    - **regByPag**: 0 para no paginar, y un número para especificar el número de filas por página.
+    - **class**: clase personalizada.
+    - **position**: [both | top | bottom]  
+                    Posición de la paginación.
+> - **class**:  
+> - **totalPosition**: [top | both | bottom | none]  
+ Posición fila TOTAL (columnas numéricas)
+> - **countRows** : [true | false]  
+Recuento de filas (poner o no)
+> - **head**:
+>   - **filterStyle**: [float | line]  
+    (flotante o incrustado)
+>   - **filterClass**: Clase CSS para añadir al filtro.
+>   - **columns**: _Grupo de Columnas_
+>        - **field**: Campo de la columna JSON
+>        - **text**: Título de la columna
+>        - **hover**: Texto hover
+>        - **style**: ""
+>        - **filter**: Tipo de filtro  
+            [text | select | number | custom | year | yearmonth]
+>            - text = Texto (filtro de cadena)
+>            - select = Desplegable con los diferentes valores no repetidos
+>            - number = Campo numérico. Se puede usar = + o - para especificar igual, más o menos de un valor dado.
+>            - custom = nombre de una función de filtro (ver customFieldFunction)
+>            - year = en una columna fecha, desplegable con los años no repetidos
+>            - yearmonth = en una columna fecha, desplegable con año y mes no repetidos.
+>       - _Campos opcionales si el filtro es "custom"_ 
+>           - **customFieldFunction**: Nombre de tu función.  Debe devolver el objeto html con el filtro que se usará y debe contener la cadena _{events}_ para que el sistema añada los eventos html de cambio (onchange) y el estilo flotante en su caso.
+>           - **customFilterFunction**: Función de filtro
+>               - Recibe 2 parámetros:  
+Valor: Valor de la celda  
+Filtro: Valor seleccionado o dado en el filtro.
+>               - Debe devolver: true (incluido en filtro) o false (no incluido)
+>          - **customFilterFunctionRow**: Función de filtro
+>               - Recibe 2 parámetros:  
+>                    Objeto Fila: objeto html ROW de la fila de la tabla  
+>                    Filtro: Valor seleccionado o dado en el filtro
+>               - Debe devolver: true o false
+>           - **filterData**: Valor de filtro al inicio. Si se especifica, valor de inicio de este filtro.
+> - **body**: Grupo de filas y columnas
+>    - Fila 1
+>        - Columna: Valor
+>        - Columna: Valor
+>    - Fila 2
+>        - Columna: Valor
+>        - Columna: Valor
+>    - etc...  
